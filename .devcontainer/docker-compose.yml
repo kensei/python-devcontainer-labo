@@ -1,0 +1,12 @@
+services:
+  labo:
+    container_name: 'python-labo'
+    environment:
+      - TZ= Asia/Tokyo
+    build: ./labo
+    working_dir: '/workspace'
+    volumes:
+      - ./:/workspace
+      - ../src:/workspace/src:delegated
+    stdin_open: true
+    tty: true
